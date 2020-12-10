@@ -7,7 +7,6 @@ var enemie2_start_position = 0
 var defesa_start_position = 55
 var enemie1_born = false
 var enemie2_born = false
-var start = false
 
 func _ready():
 	for c in 30:
@@ -29,22 +28,20 @@ func _on_Spawn_area_exited(area):
 	area.remove_from_group("spawn")
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept") or start:
-		start = true
-		if get_tree().get_nodes_in_group("spawn").size() < 1 and enemie1_born == false:
-			enemie1_born = true
-			for c in 30:
-				var enemie1 = pre_enemie1.instance()
-				enemie1.global_position = Vector2(enemie1_start_position, 25)
-				add_child(enemie1)
-				var t = Timer.new()
-				t.set_wait_time(.4)
-				t.set_one_shot(true)
-				self.add_child(t)
-				t.start()
-				yield(t, "timeout")
-				t.queue_free()
-				c += 1
+	if get_tree().get_nodes_in_group("spawn").size() < 1 and enemie1_born == false:
+		enemie1_born = true
+		for c in 30:
+			var enemie1 = pre_enemie1.instance()
+			enemie1.global_position = Vector2(enemie1_start_position, 25)
+			add_child(enemie1)
+			var t = Timer.new()
+			t.set_wait_time(.4)
+			t.set_one_shot(true)
+			self.add_child(t)
+			t.start()
+			yield(t, "timeout")
+			t.queue_free()
+			c += 1
 		
 	# if get_tree().get_nodes_in_group("spawn").size() < 1 and enemie2_born == false:
 		# enemie2_born = true

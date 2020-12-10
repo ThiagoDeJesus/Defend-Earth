@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Montserrat_Dynamic.tres" type="DynamicFont" id=1]
+
+[node name="Label" type="Label"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -66.5
+margin_top = -15.5
+margin_right = 66.5
+margin_bottom = 15.5
+custom_fonts/font = ExtResource( 1 )
+text = "Save Earth"
+__meta__ = {
+"_edit_use_anchors_": false
+}
