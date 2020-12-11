@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Space Invader"
+config/name="Defend Earth"
 run/main_scene="res://Scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
