@@ -1,5 +1,7 @@
 extends Area2D
 
+signal player_dead
+
 var pre_bullet = preload("res://Scenes/Bullet.tscn")
 var speed = 150
 var dir = Vector2(0,0)
@@ -19,7 +21,7 @@ func _process(delta):
 	translate(dir * speed * delta)
 	
 	if Input.is_action_just_pressed(("shot")):
-		if get_tree().get_nodes_in_group("player_shot").size() < 2:
+		if get_tree().get_nodes_in_group("player_shot").size() < 3:
 			var bullet = pre_bullet.instance()
 			bullet.global_position = $Muzzle.global_position
 			bullet.bullet_dir = Vector2(0, -1)
@@ -28,5 +30,5 @@ func _process(delta):
 	global_position.x = clamp(global_position.x, 0 +15, tela.x -15)
 
 func _on_Player_area_entered(area):
-	print("Morreu")
 	queue_free()
+	emit_signal("player_dead")
