@@ -20,7 +20,6 @@ func _process(delta):
 func _on_Enemie1_area_entered(area):
 	if area.is_in_group("enemie_bullet") or area.is_in_group("Spawn"):
 		return
-	print("Morreu")
 	queue_free()
 
 
