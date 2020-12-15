@@ -3,6 +3,7 @@ extends Control
 onready var scenetree: = get_tree()
 var pause: bool = false
 var player_dead: = false
+var win: bool = false
 onready var resume_button: = $ColorRect/VBoxContainer/Resume
 onready var label_text: = $ColorRect/Label
 
@@ -12,6 +13,9 @@ func _process(delta: float) -> void:
 	if player_dead:
 		resume_button.visible = false
 		label_text.text = "You died"
+	if win:
+		resume_button.visible = false
+		label_text.text = "Congratulations"
 	
 func pause_game() -> void:
 	var pause_scene_view: = self

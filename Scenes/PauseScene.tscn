@@ -59,14 +59,14 @@ text = "Resume"
 [node name="Retry" type="Button" parent="ColorRect/VBoxContainer"]
 margin_top = 58.0
 margin_right = 355.0
-margin_bottom = 113.0
+margin_bottom = 112.0
 size_flags_vertical = 3
 text = "Retry"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
-margin_top = 117.0
+margin_top = 116.0
 margin_right = 355.0
-margin_bottom = 172.0
+margin_bottom = 171.0
 size_flags_vertical = 3
 
 [node name="MainMenu" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer"]

@@ -36,6 +36,7 @@ func _process(delta):
 			var enemie1 = pre_enemie1.instance()
 			enemie1.global_position = Vector2(enemie1_start_position, 25)
 			add_child(enemie1)
+			enemie1.add_to_group("Enemie1alive")
 			var t = Timer.new()
 			t.set_wait_time(.4)
 			t.set_one_shot(true)
@@ -60,7 +61,9 @@ func _process(delta):
 #			t.queue_free()
 #			c += 1
 
-
+	if enemie1_born and get_tree().get_nodes_in_group('Enemie1alive').size() == 0:
+		pause_scene.win = true
+		pause_scene.pause_game()
 
 
 func _on_Player_player_dead() -> void:
